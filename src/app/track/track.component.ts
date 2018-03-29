@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Track } from '../models/track.model';
 
 @Component({
   selector: 'app-track',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrackComponent implements OnInit {
 
-  constructor() { }
+  private track: Track = new Track('Hardcoded Title');
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
