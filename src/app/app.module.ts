@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TrackComponent } from './track/track.component';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TrackComponent
+    TrackComponent,
+    PlaylistComponent
   ],
   imports: [
     BrowserModule
