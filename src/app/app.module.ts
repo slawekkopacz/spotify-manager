@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TrackComponent } from './track/track.component';
 import { PlaylistComponent } from './playlist/playlist.component';
+import { PlaylistService } from './playlist.service';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { PlaylistComponent } from './playlist/playlist.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [PlaylistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

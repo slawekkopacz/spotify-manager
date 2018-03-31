@@ -1,1 +1,5 @@
-<app-playlist></app-playlist>
+<p>Playlists:</p>
+<ul>
+  <app-playlist *ngFor="let pl of playlists" [playlist]="pl">
+  </app-playlist>
+</ul>
