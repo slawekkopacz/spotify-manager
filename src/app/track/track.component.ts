@@ -8,7 +8,7 @@ import { Track } from '../models/track.model';
 })
 export class TrackComponent implements OnInit {
 
-  private track: Track = new Track('Hardcoded Title');
+  track: Track = new Track('Hardcoded Title');
 
   constructor() {
   }

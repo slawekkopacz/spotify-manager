@@ -19,4 +19,10 @@ export class AppComponent implements OnInit {
     this.playlistService.getMyPlaylists()
       .subscribe(playlists => this.playlists = playlists);
   }
+
+  addNewList() {
+    const playlist = new Playlist();
+    playlist.title = 'New playlist';
+    this.playlistService.createPlaylist(playlist);
+  }
 }
