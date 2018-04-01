@@ -9,7 +9,7 @@ import { Playlist } from './models/playlist.model';
 })
 export class AppComponent implements OnInit {
 
-  title = 'app';
+  title = 'Playlists';
   playlists: Playlist[];
 
   constructor(private playlistService: PlaylistService) {

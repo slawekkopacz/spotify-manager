@@ -19,7 +19,7 @@ describe('PlaylistComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should throw error if playlist model is not set', () => {
+    expect(component).toThrowError();
   });
 });
