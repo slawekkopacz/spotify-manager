@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlaylistComponent } from './playlist.component';
+import { By } from '@angular/platform-browser';
+import { Playlist } from '../models/playlist.model';
+import { DebugElement } from '@angular/core';
 
 describe('PlaylistComponent', () => {
   let component: PlaylistComponent;
@@ -16,10 +19,19 @@ describe('PlaylistComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PlaylistComponent);
     component = fixture.componentInstance;
+    component.playlist = { title: 'Rock and Roll' };
     fixture.detectChanges();
   });
 
-  it('should throw error if playlist model is not set', () => {
-    expect(component).toThrowError();
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should render playlist title in <p>', () => {
+    const debugElement: DebugElement = fixture.debugElement.query(By.css('p'));
+    const htmlElement: HTMLElement = debugElement.nativeElement;
+    const paragraphText = htmlElement.textContent;
+
+    expect(paragraphText).toEqual('Rock and Roll');
   });
 });
