@@ -19,7 +19,9 @@ describe('PlaylistComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PlaylistComponent);
     component = fixture.componentInstance;
-    component.playlist = { title: 'Rock and Roll' };
+    component.playlist = {
+      title: 'Rock and Roll',
+      tracks: [] };
     fixture.detectChanges();
   });
 

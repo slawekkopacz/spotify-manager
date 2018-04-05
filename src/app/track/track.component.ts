@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Track } from '../models/track.model';
 
 @Component({
@@ -8,7 +8,7 @@ import { Track } from '../models/track.model';
 })
 export class TrackComponent implements OnInit {
 
-  track: Track = new Track('Hardcoded Title');
+  @Input() track: Track;
 
   constructor() {
   }
