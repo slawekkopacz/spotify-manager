@@ -1,6 +1,9 @@
 <h1>{{title}}</h1>
-<ul>
-  <app-playlist *ngFor="let pl of playlists" [playlist]="pl">
-  </app-playlist>
-</ul>
+
+<div class="container">
+  <div class="row">
+    <app-playlist *ngFor="let pl of playlists" [playlist]="pl">
+    </app-playlist>
+  </div>
+</div>
 <button class="btn btn-primary" (click)="addNewList()">Add new list</button>

@@ -1,2 +1,6 @@
-<p>{{playlist.title}}</p>
-<app-track *ngFor="let track of playlist.tracks" [track]="track"></app-track>
+<div class="col-sm">
+  <div class="border rounded p-2">
+    <p class="text-center">{{playlist.title}}</p>
+    <app-track *ngFor="let track of playlist.tracks" [track]="track"></app-track>
+  </div>
+</div>
