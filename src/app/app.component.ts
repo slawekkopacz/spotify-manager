@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PlaylistService } from './playlist.service';
 import { Playlist } from './models/playlist.model';
+import { Subject} from 'rxjs/Subject';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
+  private ngUnsubscribe: Subject<void> = new Subject();
   title = 'Playlists';
   playlists: Playlist[];
 
@@ -17,7 +20,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.playlistService.getMyPlaylists()
+      .takeUntil(this.ngUnsubscribe)
       .subscribe(playlists => this.playlists = playlists);
+  }
+
+  ngOnDestroy() {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 
   addNewList() {
