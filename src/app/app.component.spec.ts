@@ -2,12 +2,14 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { PlaylistService } from './playlist.service';
+import { TrackComponent } from './track/track.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        PlaylistComponent
+        PlaylistComponent,
+        TrackComponent
       ],
       providers: [
         PlaylistService

@@ -4,6 +4,7 @@ import { PlaylistComponent } from './playlist.component';
 import { By } from '@angular/platform-browser';
 import { Playlist } from '../models/playlist.model';
 import { DebugElement } from '@angular/core';
+import { TrackComponent } from '../track/track.component';
 
 describe('PlaylistComponent', () => {
   let component: PlaylistComponent;
@@ -11,7 +12,10 @@ describe('PlaylistComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlaylistComponent ]
+      declarations: [
+        PlaylistComponent,
+        TrackComponent
+      ]
     })
     .compileComponents();
   }));
@@ -21,7 +25,8 @@ describe('PlaylistComponent', () => {
     component = fixture.componentInstance;
     component.playlist = {
       title: 'Rock and Roll',
-      tracks: [] };
+      tracks: []
+    };
     fixture.detectChanges();
   });
 

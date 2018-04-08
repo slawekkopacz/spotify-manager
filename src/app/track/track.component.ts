@@ -8,7 +8,7 @@ import { Track } from '../models/track.model';
 })
 export class TrackComponent implements OnInit {
 
-  @Input() track: Track;
+  @Input() public track: Track;
 
   constructor() {
   }
