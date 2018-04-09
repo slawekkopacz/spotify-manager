@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Playlist } from './models/playlist.model';
+import { Playlist } from './../shared/models/playlist.model';
 import 'rxjs/add/observable/of';
 
 @Injectable()

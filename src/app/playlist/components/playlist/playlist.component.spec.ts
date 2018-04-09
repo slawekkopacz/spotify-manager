@@ -1,9 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { PlaylistComponent } from './playlist.component';
-import { By } from '@angular/platform-browser';
-import { Playlist } from '../models/playlist.model';
 import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { PlaylistComponent } from './playlist.component';
+import { Playlist } from '../../../shared/models/playlist.model';
 import { TrackComponent } from '../track/track.component';
 
 describe('PlaylistComponent', () => {

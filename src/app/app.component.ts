@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PlaylistService } from './playlist.service';
-import { Playlist } from './models/playlist.model';
+import { PlaylistService } from './playlist/playlist.service';
+import { Playlist } from './shared/models/playlist.model';
 import { Subject} from 'rxjs/Subject';
 import 'rxjs/Rx';
 

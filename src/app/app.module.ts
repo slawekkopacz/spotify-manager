@@ -1,21 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { AppComponent } from './app.component';
-import { TrackComponent } from './track/track.component';
-import { PlaylistComponent } from './playlist/playlist.component';
-import { PlaylistService } from './playlist.service';
+import { TrackComponent } from './playlist/components/track/track.component';
+import { PlaylistComponent } from './playlist/components/playlist/playlist.component';
+import { PlaylistService } from './playlist/playlist.service';
+import { PlaylistModule } from './playlist/playlist.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TrackComponent,
-    PlaylistComponent
   ],
   imports: [
-    BrowserModule
+    PlaylistModule
   ],
   providers: [PlaylistService],
   bootstrap: [AppComponent]
