@@ -12,7 +12,7 @@ import { PlaylistModule } from './playlist/playlist.module';
   imports: [
     PlaylistModule
   ],
-  providers: [PlaylistService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,13 +3,15 @@ import { AppComponent } from './app.component';
 import { PlaylistComponent } from './playlist/components/playlist/playlist.component';
 import { PlaylistService } from './playlist/playlist.service';
 import { TrackComponent } from './playlist/components/track/track.component';
+import { PlaylistsComponent } from './playlist/components/playlists/playlists.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+        TrackComponent,
         PlaylistComponent,
-        TrackComponent
+        PlaylistsComponent
       ],
       providers: [
         PlaylistService
