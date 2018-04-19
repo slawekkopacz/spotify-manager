@@ -3,6 +3,8 @@ import { Playlist } from '../../../shared/models/playlist.model';
 import { Subject} from 'rxjs/Subject';
 import { PlaylistService } from '../../playlist.service';
 import 'rxjs/Rx';
+import { Store } from '@ngrx/store';
+import * as PlaylistActions from '../../store/playlist.actions';
 
 @Component({
   selector: 'app-playlists',
@@ -14,13 +16,13 @@ export class PlaylistsComponent implements OnInit, OnDestroy {
   private ngUnsubscribe: Subject<void> = new Subject();
   playlists: Playlist[];
 
-  constructor(private playlistService: PlaylistService) {
+  constructor(private store: Store<{playlist: {playlists: Playlist[]}}>) {
   }
 
   ngOnInit() {
-    this.playlistService.getMyPlaylists()
+      this.store.select('playlist')
       .takeUntil(this.ngUnsubscribe)
-      .subscribe(playlists => this.playlists = playlists);
+      .subscribe(s => this.playlists = s.playlists);
   }
 
   ngOnDestroy() {
@@ -29,9 +31,7 @@ export class PlaylistsComponent implements OnInit, OnDestroy {
   }
 
   addNewList() {
-    const playlist = new Playlist();
-    playlist.title = 'New playlist';
-    this.playlistService.createPlaylist(playlist);
+    this.store.dispatch(new PlaylistActions.AddPlaylistAction('New through store'));
   }
 
 }

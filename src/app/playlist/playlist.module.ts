@@ -5,6 +5,8 @@ import { PlaylistComponent } from './components/playlist/playlist.component';
 import { PlaylistService } from './playlist.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { PlaylistsComponent } from './components/playlists/playlists.component';
+import { StoreModule } from '@ngrx/store';
+import { playlistReducers } from './store/playlist.reducers';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,10 @@ import { PlaylistsComponent } from './components/playlists/playlists.component';
     PlaylistsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({
+      playlist: playlistReducers
+    })
   ],
   providers: [PlaylistService],
   exports: [PlaylistsComponent]
