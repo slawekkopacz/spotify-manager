@@ -2,8 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlaylistsComponent } from './playlists.component';
 import { PlaylistComponent } from '../playlist/playlist.component';
-import { PlaylistService } from '../../playlist.service';
 import { TrackComponent } from '../track/track.component';
+import { StoreModule } from '@ngrx/store';
+import { playlistReducers } from '../../store/playlists.reducers';
 
 describe('PlaylistsComponent', () => {
   let component: PlaylistsComponent;
@@ -11,7 +12,12 @@ describe('PlaylistsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [PlaylistService],
+      imports: [
+        StoreModule.forRoot({
+          playlist: playlistReducers
+        })
+      ],
+      providers: [],
       declarations: [
         TrackComponent,
         PlaylistComponent,

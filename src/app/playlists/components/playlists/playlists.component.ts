@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Playlist } from '../../../shared/models/playlist.model';
 import { Subject} from 'rxjs/Subject';
-import { PlaylistService } from '../../playlist.service';
 import 'rxjs/Rx';
 import { Store } from '@ngrx/store';
 import * as PlaylistActions from '../../store/playlists.actions';

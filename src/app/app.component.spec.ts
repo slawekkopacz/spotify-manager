@@ -1,9 +1,11 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { PlaylistComponent } from './playlists/components/playlist/playlist.component';
-import { PlaylistService } from './playlists/playlist.service';
 import { TrackComponent } from './playlists/components/track/track.component';
 import { PlaylistsComponent } from './playlists/components/playlists/playlists.component';
+import { StoreModule } from '@ngrx/store';
+import { playlistReducers } from './playlists/store/playlists.reducers';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -13,9 +15,12 @@ describe('AppComponent', () => {
         PlaylistComponent,
         PlaylistsComponent
       ],
-      providers: [
-        PlaylistService
-      ]
+      imports: [
+        StoreModule.forRoot({
+          playlist: playlistReducers
+        })
+      ],
+      providers: []
     }).compileComponents();
   }));
   it('should create the app', async(() => {
