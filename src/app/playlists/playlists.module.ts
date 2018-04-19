@@ -6,7 +6,7 @@ import { PlaylistService } from './playlist.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { PlaylistsComponent } from './components/playlists/playlists.component';
 import { StoreModule } from '@ngrx/store';
-import { playlistReducers } from './store/playlist.reducers';
+import { playlistReducers } from './store/playlists.reducers';
 
 @NgModule({
   declarations: [
@@ -24,4 +24,4 @@ import { playlistReducers } from './store/playlist.reducers';
   providers: [PlaylistService],
   exports: [PlaylistsComponent]
 })
-export class PlaylistModule { }
+export class PlaylistsModule { }

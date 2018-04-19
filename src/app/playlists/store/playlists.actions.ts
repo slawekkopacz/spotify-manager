@@ -9,4 +9,4 @@ export class AddPlaylistAction implements Action {
   }
 }
 
-export type PlaylistActions = AddPlaylistAction;
+export type PlaylistsActions = AddPlaylistAction;

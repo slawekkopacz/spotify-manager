@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 import { Playlist } from '../../shared/models/playlist.model';
-import * as ActionTypes from './playlist.actions';
+import * as ActionTypes from './playlists.actions';
 
 const initialState = {
   playlists: [
@@ -15,7 +15,7 @@ const initialState = {
   ]
 };
 
-export function playlistReducers(state = initialState, action: ActionTypes.PlaylistActions) {
+export function playlistReducers(state = initialState, action: ActionTypes.PlaylistsActions) {
   switch (action.type) {
     case ActionTypes.ADD_PLAYLIST:
       return {

@@ -4,7 +4,7 @@ import { Subject} from 'rxjs/Subject';
 import { PlaylistService } from '../../playlist.service';
 import 'rxjs/Rx';
 import { Store } from '@ngrx/store';
-import * as PlaylistActions from '../../store/playlist.actions';
+import * as PlaylistActions from '../../store/playlists.actions';
 
 @Component({
   selector: 'app-playlists',

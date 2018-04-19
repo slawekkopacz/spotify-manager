@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { TrackComponent } from './playlist/components/track/track.component';
-import { PlaylistComponent } from './playlist/components/playlist/playlist.component';
-import { PlaylistService } from './playlist/playlist.service';
-import { PlaylistModule } from './playlist/playlist.module';
+import { TrackComponent } from './playlists/components/track/track.component';
+import { PlaylistComponent } from './playlists/components/playlist/playlist.component';
+import { PlaylistService } from './playlists/playlist.service';
+import { PlaylistsModule } from './playlists/playlists.module';
 
 
 @NgModule({
   declarations: [
   ],
   imports: [
-    PlaylistModule
+    PlaylistsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
